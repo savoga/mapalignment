@@ -202,7 +202,7 @@ def main():
 
     # --- Read image --- #
     print_utils.print_info("Reading image...")
-    image_filepath = get_abs_path(args.image)
+    image_filepath = get_abs_path(args.image.replace(' ',''))
     image, image_metadata = read_image(image_filepath, args.pixelsize)
     image = clip_image(image, 0, 255)
 
