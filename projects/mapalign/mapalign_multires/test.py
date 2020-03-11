@@ -3,7 +3,9 @@ import os
 import numpy as np
 
 # Import visualization first as it might change the matplotlib backend
-sys.path.append("../utils")
+# sys.path.append("../utils")
+current_filepath = os.path.dirname(os.path.realpath(__file__))
+sys.path.append(os.path.join(current_filepath, "../utils"))
 import visualization
 
 import multires_pipeline

@@ -20,6 +20,7 @@ import geo_utils
 
 # -- Default script arguments: --- #
 CONFIG = "config"
+CONFIGDIR = os.path.dirname(os.path.realpath(__file__))
 IMAGE = "geo_images/test_image.tif"
 SHAPEFILE = None
 BATCH_SIZE = 12
@@ -45,6 +46,11 @@ def get_args():
         default=CONFIG,
         type=str,
         help='Name of the config file, excluding the .json file extension.')
+    argparser.add_argument(
+        '-cf', '--configdir',
+        default=CONFIGDIR,
+        type=str,
+        help='Path for default config file.')
     argparser.add_argument(
         '-i', '--image',
         default=IMAGE,
@@ -186,7 +192,7 @@ def check_polygons_in_image(image, polygons):
 def main():
     # --- Process args --- #
     args = get_args()
-    config = run_utils.load_config(args.config)
+    config = run_utils.load_config(args.config, args.configdir)
     if config is None:
         print_utils.print_error(
             "ERROR: cannot continue without a config file. Exiting now...")

@@ -2,6 +2,7 @@ import sys
 import skimage.transform
 import skimage.io
 import numpy as np
+import os
 
 import model
 
@@ -37,7 +38,8 @@ def inference(runs_dirpath, ori_image, ori_metadata, ori_disp_polygons, model_di
     run_dir = run_utils.setup_run_dir(runs_dirpath, run_name)
     _, checkpoints_dir = run_utils.setup_run_subdirs(run_dir)
 
-    config = run_utils.load_config(config_dirpath=run_dir)
+    config = run_utils.load_config(config_dirpath=os.path.dirname(os.path.realpath(__file__)))
+    #run_dir) why would there be a second config in run dir??
 
     # Downsample
     image, disp_polygons = downsample_data(ori_image, ori_metadata, ori_disp_polygons, scale_factor, config["reference_pixel_size"])

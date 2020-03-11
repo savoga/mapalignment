@@ -9,13 +9,16 @@ import model_utils
 # import model_utils_concat_interm_outputs
 import loss_utils
 
-sys.path.append("../evaluate_funcs")  # Evaluation functions
+current_filepath = os.path.dirname(os.path.realpath(__file__))
+sys.path.append(os.path.join(current_filepath, "../evaluate_funcs"))
+#sys.path.append("../evaluate_funcs")  # Evaluation functions
 import evaluate_utils
 
-sys.path.append("../utils")  # Mapalign utils
+sys.path.append(os.path.join(current_filepath, "../utils"))
+# sys.path.append("../utils")  # Mapalign utils
 import visualization
 
-sys.path.append("../../utils")  # All project utils
+#sys.path.append("../../utils")  # All project utils
 import python_utils
 import polygon_utils
 import tf_utils

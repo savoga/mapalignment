@@ -7,6 +7,7 @@ import datetime
 from jsmin import jsmin
 import json
 import random
+import sys
 
 import print_utils
 import python_utils
@@ -556,6 +557,9 @@ def setup_run_dir(runs_dirpath, run_name=None, new_run=False, check_exists=False
     :param check_exists:
     :return: Run directory path. The directory name is in the form "run_name | timestamp"
     """
+
+    os.chdir(sys.path[0])
+
     # Create runs directory of it does not exist
     if not os.path.exists(runs_dirpath):
         os.makedirs(runs_dirpath)
