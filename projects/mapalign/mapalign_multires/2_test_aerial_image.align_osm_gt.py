@@ -4,7 +4,7 @@ import os
 import test
 
 # CHANGE to you own test config file:
-import config_test_inria as config_test
+import config as config_test#_test_inria as config_test
 
 # CHANGE to the path of your own read.py script:
 sys.path.append("../../../data/AerialImageDataset")

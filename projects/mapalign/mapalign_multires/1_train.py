@@ -8,10 +8,13 @@ import os
 
 import model
 
-sys.path.append(os.path.join("../dataset_utils"))
+#sys.path.append(os.path.join("../dataset_utils"))
+current_filepath = os.path.dirname(os.path.realpath(__file__))
+sys.path.append(os.path.join(current_filepath, "../dataset_utils"))
 import dataset_multires
 
-sys.path.append("../../utils")
+#sys.path.append("../../utils")
+sys.path.append(os.path.join(current_filepath, "../../utils"))
 import python_utils
 import run_utils
 
@@ -151,6 +154,7 @@ def train(config, tfrecords_dirpath_list, init_run_dirpath, run_dirpath, batch_s
 
 def main(_):
     working_dir = os.path.dirname(os.path.abspath(__file__))
+    config_dir = os.path.dirname(os.path.realpath(__file__))
 
     # print FLAGS
     print("#--- FLAGS: ---#")
@@ -162,7 +166,7 @@ def main(_):
     print("ds_fac: {}".format(FLAGS.ds_fac))
 
     # load config file
-    config = run_utils.load_config(FLAGS.config)
+    config = run_utils.load_config(FLAGS.config, config_dir)
 
     # Check config setting coherences
     assert len(config["level_loss_coefs_params"]) == config["pool_count"], \

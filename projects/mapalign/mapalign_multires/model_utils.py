@@ -5,8 +5,11 @@ from __future__ import print_function
 import math
 import sys
 import tensorflow as tf
+import os
 
-sys.path.append("../../utils")
+# sys.path.append("../../utils")
+current_filepath = os.path.dirname(os.path.realpath(__file__))
+sys.path.append(os.path.join(current_filepath, "../../utils"))
 import tf_utils
 import print_utils
 

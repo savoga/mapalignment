@@ -147,8 +147,8 @@ def create_multivariate_gaussian_mixture_map(shape, mode_count, mu_range, sig_sc
     dtype = np.float32
 
     mu_scale = mu_range[1] - mu_range[0]
-    row = np.linspace(mu_range[0], mu_range[1], mu_scale*shape[0]/downsample_factor, dtype=dtype)
-    col = np.linspace(mu_range[0], mu_range[1], mu_scale*shape[1]/downsample_factor, dtype=dtype)
+    row = np.linspace(mu_range[0], mu_range[1], int(mu_scale*shape[0]/downsample_factor), dtype=dtype)
+    col = np.linspace(mu_range[0], mu_range[1], int(mu_scale*shape[1]/downsample_factor), dtype=dtype)
     rr, cc = np.meshgrid(row, col, indexing='ij')
     grid = np.stack([rr, cc], axis=2)
 

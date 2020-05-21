@@ -28,6 +28,7 @@ def get_display_availability():
 
 
 def get_filepaths(dir_path, endswith_str="", startswith_str=""):
+    dir_path = "/".join([os.path.dirname(os.path.realpath(__file__)),dir_path])
     if os.path.isdir(dir_path):
         image_filepaths = []
         for path, dnames, fnames in os.walk(dir_path):

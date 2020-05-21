@@ -425,6 +425,7 @@ class MapAlignModel:
         train_gt_polygon_map, \
         train_gt_disp_field_map, \
         train_disp_polygon_map = dataset_tensors
+        tf.logging.set_verbosity(tf.logging.DEBUG) # Rajouté récemment !!
         train_image_batch, train_gt_polygon_map_batch, train_gt_disp_field_map_batch, train_disp_polygon_map_batch = sess.run(
             [train_image, train_gt_polygon_map, train_gt_disp_field_map, train_disp_polygon_map])
 

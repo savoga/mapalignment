@@ -135,7 +135,7 @@ def save_annotations(image_filepath, polygons):
     filename_no_extension = os.path.splitext(image_filepath)[0]
     npy_filepath = filename_no_extension + ".aligned.npy"
     shp_filepath = filename_no_extension + ".aligned.shp"
-    np.save(npy_filepath, polygons)
+    np.save(npy_filepath.replace(' ',''), polygons)
     geo_utils.save_shapefile_from_polygons(polygons, image_filepath, shp_filepath)
 
 
@@ -170,6 +170,9 @@ def get_min_max(image, std_factor=2):
 def stretch_image(image, min, max, target_min, target_max):
     image = (image - min) / (max - min)
     image = image * (target_max - target_min) + target_min
+
+    (image - min) / (max - min) * (target_max - target_min) + target_min
+
     return image
 
 
@@ -187,6 +190,7 @@ def check_polygons_in_image(image, polygons):
     max_i = max([polygon[:, 0].max() for polygon in polygons])
     max_j = max([polygon[:, 1].max() for polygon in polygons])
     return not (max_i < 0 or height < min_i or max_j < 0 or width < min_j)
+    # problème: on a height < min_i et width < min_j
 
 
 def main():

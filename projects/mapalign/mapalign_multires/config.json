@@ -29,17 +29,17 @@
   // sets disp_map values in [-0.5, 0.5]
   "disp_max_abs_value": 4,
   "tfrecords_partial_dirpath_list": [
-    "AerialImageDataset/tfrecords.mapalign.multires.aligned_noisy_1",
-    "bradbury_buildings_roads_height_dataset/tfrecords.mapalign.multires.aligned_noisy_1"
+    "AerialImageDataset/tfrecords.mapalign.multires.aligned_noisy_1"
+    //"bradbury_buildings_roads_height_dataset/tfrecords.mapalign.multires.aligned_noisy_1"
     // "mapping_challenge_dataset/tfrecords.mapalign.multires"
   ],
   "tfrecord_filename_format": "ds_fac_{:02d}.{{:06d}}.tfrecord",
   // dataset fold, downsampling factor, shard index
   "keep_poly_prob": 0.1,
   // default: 0.1  // default: 0.5  // each input misaligned polygon has a 50% change to be kept and 50% to be removed
-  "data_aug": true,
+  "data_aug": false,
   //  --- model(s) --- //
-  "input_res": 220,
+  "input_res": 124,//220,
   // input image
   "add_image_input": true,
   "image_channel_count": 3,
@@ -150,7 +150,7 @@
   "weight_decay": 1e-4,
   // default: 1e-6
   "dropout_keep_prob": 1.0,
-  "max_iter": 100000,
+  "max_iter": 100, // VALEUR ANCIENNCE 100000
   "perform_validation_step": false, // Default: true
   "train_summary_step": 250,
   "val_summary_step": 1000,

@@ -93,7 +93,8 @@ def get_osm_data(coor_query):
     api = overpy.Overpass()
     query_buildings = QUERY_BASE.format("building", coor_query[1], coor_query[0], coor_query[3], coor_query[2])
     query_successful = False
-    wait_duration = 60
+    wait_duration = 2
+    #wait_duration = 60
     result = None
     while not query_successful:
         try:
@@ -108,6 +109,7 @@ def get_osm_data(coor_query):
 
 def proj_to_epsg_space(nodes, coor_sys):
     original = Proj(CRS)
+    # coor_sys = '26912'
     destination = Proj(init='EPSG:{}'.format(coor_sys))
     polygon = []
     for node in nodes:
@@ -149,7 +151,7 @@ def apply_transform_mat(polygon_epsg_space, transform_mat):
 def get_polygons_from_osm(image_filepath, tag=""):
     coor, gt, coor_system = get_coor_in_space(image_filepath)
     transform_mat = compute_epsg_to_image_mat(coor, gt)
-    osm_data = get_osm_data(coor[1])
+    osm_data = get_osm_data(coor[1]) # coor[1] -> latitude/longitude
 
     polygons = []
     for way in osm_data.ways:
