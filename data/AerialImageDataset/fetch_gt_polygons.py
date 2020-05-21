@@ -2,7 +2,10 @@ import sys
 import os
 import numpy as np
 
-sys.path.append("../../../projects/utils")
+current_filepath = os.path.dirname(os.path.realpath(__file__))
+sys.path.append(os.path.join(current_filepath, "../../projects/utils"))
+#sys.path.append("../../../projects/utils")
+
 import python_utils
 import polygon_utils
 import geo_utils
@@ -10,7 +13,8 @@ import geo_utils
 
 # --- Params --- #
 
-DIR_PATH_LIST = ["./raw/train", "./raw/test"]
+#DIR_PATH_LIST = ["./raw/train", "./raw/test"]
+DIR_PATH_LIST = ["../../../data/AerialImageDataset/raw/train/"]#, "../../../data/AerialImageDataset/raw/test/"]
 
 IMAGE_DIR_NAME = "images"
 IMAGE_EXTENSION = "tif"
@@ -34,7 +38,7 @@ def load_gt_polygons(image_filepath):
 
 def fetch_from_images_in_directory(dir_path):
     print("Fetching for images in {}".format(dir_path))
-    gt_polygons_dir_path = os.path.join(dir_path, GT_POLYGONS_DIR_NAME)
+    gt_polygons_dir_path = os.path.join("/workspace/data/AerialImageDataset/raw/train/", GT_POLYGONS_DIR_NAME)#os.path.join(dir_path, GT_POLYGONS_DIR_NAME)
     if not os.path.exists(gt_polygons_dir_path):
         os.makedirs(gt_polygons_dir_path)
 
@@ -46,6 +50,8 @@ def fetch_from_images_in_directory(dir_path):
         image_name = os.path.splitext(image_basename)[0]
         print("Fetching for image {}. Progress: {}/{}".format(image_name, i+1, len(image_filepaths)))
         gt_polygons_path = os.path.join(gt_polygons_dir_path, "{}.npy".format(image_name))
+        #os.remove(gt_polygons_path)
+        #os.path.exists('../../../data/AerialImageDataset/raw/train/gt_polygons/austin1.npy')
         if not os.path.exists(gt_polygons_path):
             gt_polygons = load_gt_polygons(image_filepath)
             if gt_polygons is not None:
