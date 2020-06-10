@@ -45,6 +45,18 @@ Because of the numerous specific libaries to install and to avoid version issues
 - Virtual environment: Conda allows the use of virtual environment in order to avoid installing any library locally
 It appeared that using GPU is easier with virtual environment.
 
+We chose to set a virtual environment with all required libraries installed with pip excepted tensorflow where we used conda installation:
+
+```
+conda install tensorflow-gpu
+```
+
+Not specifying the version allowed conda to choose right version to install according to associated packages:
+
+tensorflow-gpu==1.1
+cuda==9.0
+cudnn==7.4.1
+
 ### Training
 Important: for the training phase, OSM are considered aligned (ground truth)
 
