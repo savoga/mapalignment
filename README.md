@@ -52,7 +52,7 @@ We chose to set a virtual environment with all required libraries installed with
 conda install tensorflow-gpu
 ```
 
-Not specifying the version allowed conda to choose right version to install according to associated packages:
+Not specifying the version allowed conda to choose the right version to install according to associated packages:
 
 tensorflow-gpu==1.1
 
