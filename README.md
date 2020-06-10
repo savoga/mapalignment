@@ -5,7 +5,8 @@
 Airbus needs cadasters as accurate as possible in order to build 3D maps.
 Most of towns have their own cadasters with building locations.
 
-[Cadaster image]
+<p align="center">
+    <img src="img/cadaster.png" width="300" height="180" />
 
 ### Problem
 
@@ -53,10 +54,15 @@ Training
 - Model is instanciated (graph is built)
 - Training is done to learn the displacement → storage of weights
 
+
+
 ### Inference
 Important: OSM are considered ill-aligned
 - OSM request to get polygons
 - Use weights to infer new polygons better aligned
+
+<p align="center">
+    <img src="img/inference_workflow.png" width="800" height="500" />
 
 ### Model
 Multi-resolutions
