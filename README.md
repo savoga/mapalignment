@@ -54,15 +54,13 @@ Training
 - Model is instanciated (graph is built)
 - Training is done to learn the displacement → storage of weights
 
-
-
 ### Inference
 Important: OSM are considered ill-aligned
 - OSM request to get polygons
 - Use weights to infer new polygons better aligned
 
 <p align="center">
-    <img src="img/inference_workflow.png" width="800" height="500" />
+    <img src="img/inference_workflow_2.png" width="800" height="500" />
 
 ### Model
 Multi-resolutions
