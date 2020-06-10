@@ -59,7 +59,7 @@ Training
 - Training is done to learn the displacement → storage of weights
 
 <p align="center">
-    <img src="img/train_workflow_2.png" width="700" height="600" />
+    <img src="img/train_workflow_2.png" width="600" height="600" />
 
 ### Inference
 Important: OSM are considered ill-aligned
@@ -67,7 +67,7 @@ Important: OSM are considered ill-aligned
 - Use weights to infer new polygons better aligned
 
 <p align="center">
-    <img src="img/inference_workflow_2.png" width="800" height="400" />
+    <img src="img/inference_workflow.png" width="800" height="400" />
 
 ### Model
 Multi-resolutions
