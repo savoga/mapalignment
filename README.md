@@ -59,7 +59,7 @@ Training
 - Training is done to learn the displacement → storage of weights
 
 <p align="center">
-    <img src="img/train_workflow.png" width="700" height="600" />
+    <img src="img/train_workflow_2.png" width="700" height="600" />
 
 ### Inference
 Important: OSM are considered ill-aligned
