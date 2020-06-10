@@ -43,6 +43,7 @@ Library that is specific to deep learning:
 Because of the numerous specific libaries to install and to avoid version issues, it is better to work using an appropriate environment: 
 - Docker container: a container allows to be environment-friendly and not install any library locally
 - Virtual environment: Conda allows the use of virtual environment in order to avoid installing any library locally
+
 It appeared that using GPU is easier with virtual environment.
 
 We chose to set a virtual environment with all required libraries installed with pip excepted tensorflow where we used conda installation:
