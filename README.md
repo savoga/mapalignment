@@ -1,25 +1,28 @@
 # Aligning Cadasters with Satellite Images
 
-**Intro**
+### Intro
+
 Airbus needs cadasters as accurate as possible in order to build 3D maps.
 Most of towns have their own cadasters with building locations.
 
 [Cadaster image]
 
-**Problem**
+### Problem
+
 These cadasters often contain errors due to several factors:
 - Operational mistakes: some of these maps are created by individuals and are thus subject to human errors
 - Atmospheric issues: some of these maps are created from satellite images and errors can rise because of atmosphere condition
 - Update issue: these cadasters can be outdated if new buildings appear
 
-**Objective**
+### Objective
+
 The objective of this project is to implement a model allowing to realign wrong cadasters with true building locations.
 
-**Deep learning / CNN**
+### Deep learning / CNN
 In image registration, deep learning models allow to learn the displacement of a misaligned image to be correctly aligned. This is done through supervised learning using aligned images as labels.
 Convolutional neural networks can usually efficiently detect pixel changes and can thus easily spot edges. This is especially useful in building detection.
 
-**Workflow**
+### Workflow
 Inference:
 Input: satellite image
 Output: misaligned polygons (from OSM) and aligned polygons
@@ -27,7 +30,7 @@ Training:
 Input: satellite images and aligned polygons (labels)
 Output: model weights
 
-**Tools**
+### Tools
 Libraries that are specific to image processing:
 - GDAL: allows the use of various image formats and has many functions for transformations and projections
 - PyProj: has many transformation functions. We use the projection in EPSG space to get building coordinates
@@ -35,13 +38,13 @@ Libraries that are specific to image processing:
 Library that is specific to deep learning:
 - Tensorflow: used to build the CNN model
 
-**Infrastructure**
+### Infrastructure
 Because of the numerous specific libaries to install and to avoid version issues, it is better to work using an appropriate environment: 
 - Docker container: a container allows to be environment-friendly and not install any library locally
 - Virtual environment: Conda allows the use of virtual environment in order to avoid installing any library locally
 It appeared that using GPU is easier with virtual environment.
 
-**Training**
+### Training
 Important: for the training phase, OSM are considered aligned (ground truth)
 Preprocessing
 - OSM request to get polygons
@@ -50,12 +53,12 @@ Training
 - Model is instanciated (graph is built)
 - Training is done to learn the displacement → storage of weights
 
-**Inference**
+### Inference
 Important: OSM are considered ill-aligned
 - OSM request to get polygons
 - Use weights to infer new polygons better aligned
 
-**Model**
+### Model
 Multi-resolutions
 Multi-tasks
 
