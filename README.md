@@ -67,7 +67,7 @@ Important: OSM are considered ill-aligned
 - Use weights to infer new polygons better aligned
 
 <p align="center">
-    <img src="img/inference_workflow.png" width="800" height="400" />
+    <img src="img/inference_workflow.png" width="600" height="400" />
 
 ### Model
 Multi-resolutions
