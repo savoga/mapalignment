@@ -47,9 +47,13 @@ It appeared that using GPU is easier with virtual environment.
 
 ### Training
 Important: for the training phase, OSM are considered aligned (ground truth)
-Preprocessing \
+
+Preprocessing
+
 - OSM request to get polygons
-Training \
+
+Training
+
 - Displaced polygons are created from OSM ones
 - Model is instanciated (graph is built)
 - Training is done to learn the displacement → storage of weights
