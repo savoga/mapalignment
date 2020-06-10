@@ -55,7 +55,9 @@ conda install tensorflow-gpu
 Not specifying the version allowed conda to choose right version to install according to associated packages:
 
 tensorflow-gpu==1.1
+
 cuda==9.0
+
 cudnn==7.4.1
 
 ### Training
