@@ -63,12 +63,7 @@ cudnn==7.4.1
 ### Training
 Important: for the training phase, OSM are considered aligned (ground truth)
 
-Preprocessing
-
-- OSM request to get polygons
-
-Training
-
+- OSM request to get polygons (preprocessing)
 - Displaced polygons are created from OSM ones
 - Model is instanciated (graph is built)
 - Training is done to learn the displacement → storage of weights
