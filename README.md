@@ -79,10 +79,6 @@ Important: OSM are considered ill-aligned
 <p align="center">
     <img src="img/inference_workflow.png" width="600" height="400" />
 
-### Model
-Multi-resolutions
-Multi-tasks
-
 # Aligning and Updating Cadaster Maps with Remote Sensing Images
 
 <p align="center">
